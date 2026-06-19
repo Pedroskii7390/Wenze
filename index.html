@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wenze — Vos courses livrées, simplement</title>
-  <meta name="description" content="Wenze livre vos courses à domicile dans le Borinage et alentours. Commande simple, créneaux rapides, suivi en temps réel.">
+  <title>Wenze — Service de courses à Mons</title>
+  <meta name="description" content="Wenze réalise vos courses et les livre à domicile à Mons et alentours, principalement le week-end sur rendez-vous.">
   <meta name="theme-color" content="#0B0F19">
-  <meta property="og:title" content="Wenze — Vos courses livrées, simplement">
-  <meta property="og:description" content="Commande simple, créneaux rapides, suivi en temps réel.">
+  <meta property="og:title" content="Wenze — Service de courses à Mons">
+  <meta property="og:description" content="Service local de courses à domicile à Mons, sur rendez-vous le week-end.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://dummyimage.com/1200x630/0b0f19/ffffff&text=Wenze">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300C689'/%3E%3Ctext x='50' y='58' font-family='Arial' font-size='46' text-anchor='middle' fill='%23fff'%3EW%3C/text%3E%3C/svg%3E">
@@ -121,6 +121,13 @@
     .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
     @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
     .disclaimer{font-size:.9rem; color:var(--muted)}
+    .offer-banner{display:inline-flex; gap:8px; align-items:center; background:rgba(0,198,137,.14); color:#bfffea; border:1px solid rgba(0,198,137,.35); padding:10px 14px; border-radius:999px; font-weight:800; margin:0 0 12px}
+    .weekend-note{display:inline-flex; gap:8px; align-items:center; background:rgba(255,209,102,.12); color:#ffe5a3; border:1px solid rgba(255,209,102,.28); padding:9px 13px; border-radius:999px; font-weight:700; margin:0 0 22px}
+    .highlight-card{border:1px solid rgba(0,198,137,.28); background:linear-gradient(180deg, rgba(0,198,137,.08), rgba(255,255,255,.02))}
+    .legal-box{max-height:0; overflow:hidden; transition:max-height .35s ease; margin-top:12px}
+    .legal-box.open{max-height:900px}
+    .whatsapp-float{position:fixed; right:18px; bottom:18px; z-index:80; box-shadow:var(--shadow)}
+    @media(max-width:700px){.whatsapp-float{left:18px; right:18px}}
     /* Footer */
     footer{padding:34px 0; color:var(--muted)}
     .foot-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px}
@@ -151,6 +158,7 @@
         <span>Wenze</span>
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#probleme">Pourquoi Wenze ?</a>
         <a href="#services">Services</a>
         <a href="#comment">Comment ça marche</a>
         <a href="#tarifs">Tarifs</a>
@@ -165,17 +173,19 @@
   <main id="top" class="wrap hero">
     <div class="hero-grid">
       <section>
-        <span class="kicker">Livraison de courses • Borinage & alentours</span>
-        <h1>Vos courses livrées <em>vite</em>, bien, et au meilleur prix</h1>
-        <p class="lead">Commandez auprès de vos commerces favoris, nous récupérons, regroupons et livrons à domicile, sur un créneau qui vous arrange.</p>
+        <span class="kicker">Service de courses • Mons & alentours</span>
+        <h1>Vous faites votre liste. <em>Nous faisons tout le reste.</em></h1>
+        <p class="lead">Finis les sacs lourds, les files d’attente et les trajets inutiles. Wenze réalise vos courses et les livre directement à votre domicile.</p>
+        <div class="offer-banner">🟢 Découvrez Wenze : première livraison à tarif découverte (9,90 €)</div><br>
+        <div class="weekend-note">📅 Livraisons principalement le samedi et le dimanche sur rendez-vous</div>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary">Demander une livraison</a>
-          <a href="https://wa.me/32400000000?text=Bonjour%20Wenze%20!%20Je%20souhaite%20une%20livraison%20%F0%9F%9A%9C" class="btn btn-ghost" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+          <a href="https://wa.me/32489461147?text=Bonjour%20Wenze%20%F0%9F%91%8B%20Je%20souhaite%20faire%20une%20demande%20de%20livraison." class="btn btn-ghost" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         </div>
         <div class="trust">
-          <span class="dot"></span> <span>Créneaux le jour-même</span>
-          <span class="dot"></span> <span>Paiement sécurisé (carte / QR)</span>
-          <span class="dot"></span> <span>Suivi de commande</span>
+          <span class="dot"></span> <span>Service local à Mons</span>
+          <span class="dot"></span> <span>Ticket de caisse fourni</span>
+          <span class="dot"></span> <span>Prix confirmé avant achat</span>
         </div>
       </section>
       <aside>
@@ -183,24 +193,52 @@
           <div class="bubble"></div>
           <!-- Minimal mock: order summary -->
           <div style="width:100%; max-width:420px">
-            <div class="price-card">
-              <div class="badge">Nouveau</div>
-              <strong>Commande type</strong>
+            <div class="price-card highlight-card">
+              <div class="badge">Simple</div>
+              <strong>Comment ça se passe ?</strong>
               <ul class="clean mt-8">
-                <li><span class="check">✓</span> Lidl — panier frais</li>
-                <li><span class="check">✓</span> Pharmacien — produits bébé</li>
-                <li><span class="check">✓</span> Boulanger — 2 baguettes</li>
+                <li><span class="check">✓</span> Vous envoyez votre liste</li>
+                <li><span class="check">✓</span> Nous confirmons le tarif</li>
+                <li><span class="check">✓</span> Nous réalisons vos courses</li>
+                <li><span class="check">✓</span> Livraison le week-end sur rendez-vous</li>
               </ul>
               <div class="mt-16">
-                <div class="pill"><strong>Total estimé</strong> · <span>57,30 €</span></div>
+                <div class="pill"><strong>1ère livraison</strong> · <span>9,90 €</span></div>
               </div>
-              <button class="btn btn-primary mt-16" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Je commande</button>
+              <button class="btn btn-primary mt-16" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Je réserve</button>
             </div>
           </div>
         </div>
       </aside>
     </div>
   </main>
+
+  <!-- Problème client -->
+  <section id="probleme" class="section">
+    <div class="wrap">
+      <h2>Marre de perdre du temps avec les courses ?</h2>
+      <p class="muted">Wenze s’adresse aux personnes qui veulent éviter les contraintes des courses tout en gardant un service simple, humain et local.</p>
+      <div class="features mt-16">
+        <article class="feature">
+          <h3><span class="x">✕</span> Sacs lourds</h3>
+          <p>Packs d’eau, cabas remplis, escaliers, coffre à charger… nous vous évitons l’effort.</p>
+        </article>
+        <article class="feature">
+          <h3><span class="x">✕</span> Files d’attente</h3>
+          <p>Plus besoin de perdre du temps en magasin ou à la caisse le week-end.</p>
+        </article>
+        <article class="feature">
+          <h3><span class="x">✕</span> Organisation compliquée</h3>
+          <p>Vous envoyez votre liste, nous confirmons le tarif, puis nous nous occupons du reste.</p>
+        </article>
+      </div>
+      <div class="card mt-16">
+        <strong>Wenze s’occupe du reste.</strong>
+        <p class="muted mt-8">Un service de courses sur rendez-vous, pensé pour vous faire gagner du temps et simplifier votre quotidien à Mons et dans les communes voisines.</p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Services -->
   <section id="services" class="section">
@@ -214,13 +252,13 @@
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm1 5h-2v6h6v-2h-4V7z"/></svg>
-          <h3>Créneaux rapides</h3>
-          <p>Livraisons le jour‑même sur disponibilités. Choisissez un créneau précis, suivez votre livreur en temps réel.</p>
+          <h3>Livraisons sur rendez-vous</h3>
+          <p>Un service principalement le samedi et le dimanche, avec une confirmation personnalisée avant chaque commande.</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1l3 7h7l-5.5 4.5L18 20l-6-4-6 4 1.5-7.5L2 8h7z"/></svg>
-          <h3>Qualité & sourire</h3>
-          <p>Produits vérifiés, chaîne du froid respectée grâce à nos sacs isothermes. Service attentionné et flexible.</p>
+          <h3>Confiance & transparence</h3>
+          <p>Produits choisis avec soin, ticket de caisse fourni, tarif validé avant départ et contact direct via WhatsApp.</p>
         </article>
       </div>
     </div>
@@ -241,11 +279,11 @@
         </div>
         <div class="step">
           <strong>3. Nous livrons</strong>
-          <p>Livraison à votre porte, créneau serré. Chaîne du froid respectée.</p>
+          <p>Livraison à votre porte le week-end, sur rendez-vous confirmé ensemble.</p>
         </div>
         <div class="step">
           <strong>4. Paiement</strong>
-          <p>Par carte, QR ou espèces (reçu fourni). Facture sur demande.</p>
+          <p>Paiement selon accord. Pour les commandes importantes, un acompte peut être demandé.</p>
         </div>
       </div>
     </div>
@@ -254,44 +292,45 @@
   <!-- Tarifs -->
   <section id="tarifs" class="section">
     <div class="wrap">
-      <h2>Des tarifs simples</h2>
-      <p class="muted">Frais de service + livraison. Les prix en magasin restent les vôtres (nous donnons les tickets).</p>
-      <div class="pricing">
+      <h2>Des tarifs clairs, confirmés avant départ</h2>
+      <p class="muted">Les frais Wenze couvrent le déplacement, la préparation des courses, la livraison et le service client. Les prix des produits restent ceux du magasin : ticket de caisse fourni.</p>
+      <div class="offer-banner mt-16">🟢 Découvrez Wenze : première livraison à tarif découverte (9,90 €)</div>
+      <div class="pricing mt-16">
         <article class="price-card">
-          <div class="badge">Découverte</div>
-          <h3>Petit panier</h3>
-          <div class="price">4,90 €</div>
-          <p class="note">jusqu’à 30 € d’achats</p>
+          <div class="badge">Essentiel</div>
+          <h3>Livraison Essentielle</h3>
+          <div class="price">14,90 €</div>
+          <p class="note">1 magasin • zone Mons</p>
           <ul class="clean mt-16">
-            <li><span class="check">✓</span> 1 à 2 magasins</li>
-            <li><span class="check">✓</span> Créneaux 24 h</li>
-            <li><span class="check">✓</span> Suivi SMS</li>
+            <li><span class="check">✓</span> Liste simple</li>
+            <li><span class="check">✓</span> Ticket de caisse fourni</li>
+            <li><span class="check">✓</span> Livraison sur rendez-vous</li>
+          </ul>
+        </article>
+        <article class="price-card highlight-card">
+          <div class="badge">Recommandé</div>
+          <h3>Livraison Confort</h3>
+          <div class="price">19,90 €</div>
+          <p class="note">jusqu’à 3 magasins</p>
+          <ul class="clean mt-16">
+            <li><span class="check">✓</span> Courses plus complètes</li>
+            <li><span class="check">✓</span> Organisation personnalisée</li>
+            <li><span class="check">✓</span> Confirmation WhatsApp</li>
           </ul>
         </article>
         <article class="price-card">
-          <div class="badge">Populaire</div>
-          <h3>Panier famille</h3>
-          <div class="price">7,90 €</div>
-          <p class="note">30–80 € d’achats</p>
+          <div class="badge">Sur mesure</div>
+          <h3>Livraison Premium</h3>
+          <div class="price">Sur devis</div>
+          <p class="note">gros volume ou demande spécifique</p>
           <ul class="clean mt-16">
-            <li><span class="check">✓</span> Jusqu’à 3 magasins</li>
-            <li><span class="check">✓</span> Créneaux le jour‑même</li>
-            <li><span class="check">✓</span> Chaîne du froid</li>
-          </ul>
-        </article>
-        <article class="price-card">
-          <div class="badge">Pro</div>
-          <h3>Gros panier</h3>
-          <div class="price">9,90 €</div>
-          <p class="note">80–150 € d’achats</p>
-          <ul class="clean mt-16">
-            <li><span class="check">✓</span> 4 magasins &amp; +</li>
-            <li><span class="check">✓</span> Livraisons planifiées</li>
-            <li><span class="check">✓</span> Facture disponible</li>
+            <li><span class="check">✓</span> Packs lourds / gros panier</li>
+            <li><span class="check">✓</span> Plusieurs demandes</li>
+            <li><span class="check">✓</span> Acompte possible si nécessaire</li>
           </ul>
         </article>
       </div>
-      <p class="muted mt-16">Zone éloignée : +3 € — Au‑delà de 150 € d’achats : +2 €.</p>
+      <p class="muted mt-16">Le tarif est toujours confirmé avant le départ de votre commande. Pour les commandes importantes, Wenze peut demander un acompte afin de sécuriser l’achat.</p>
     </div>
   </section>
 
@@ -300,11 +339,11 @@
     <div class="wrap zone-grid">
       <div>
         <h2>Zone de service</h2>
-        <p>Nous couvrons le Borinage et communes voisines (Mons, Quaregnon, Colfontaine, Saint‑Ghislain, Frameries…).</p>
-        <span class="zone-badge">Livraison éco — vélo & voiture hybride</span>
+        <p>Nous desservons Mons et les communes voisines : Frameries, Quaregnon, Colfontaine, Saint-Ghislain, Hornu et Jemappes.</p>
+        <span class="zone-badge">Service local — Mons & alentours</span>
         <ul class="clean mt-16">
-          <li><span class="check">✓</span> Livraison le jour‑même selon disponibilité</li>
-          <li><span class="check">✓</span> Créneaux précis et confirmation avant départ</li>
+          <li><span class="check">✓</span> Livraisons principalement le samedi et le dimanche</li>
+          <li><span class="check">✓</span> Créneaux validés ensemble par WhatsApp</li>
           <li><span class="check">✓</span> Sacs isothermes & respect chaîne du froid</li>
         </ul>
       </div>
@@ -336,7 +375,7 @@
   <section id="contact" class="section">
     <div class="wrap">
       <h2>Demander une livraison</h2>
-      <p class="muted">Remplissez ce formulaire ou envoyez un WhatsApp — nous confirmons votre créneau rapidement.</p>
+      <p class="muted">Remplissez ce formulaire : il ouvrira automatiquement WhatsApp avec votre demande pré-remplie.</p>
       <form id="leadForm" class="card" novalidate>
         <div class="grid-2">
           <div class="field">
@@ -358,15 +397,17 @@
             <label for="slot">Créneau souhaité</label>
             <select id="slot" name="slot" required>
               <option value="">Choisir…</option>
-              <option>Matin (08:00–12:00)</option>
-              <option>Après‑midi (12:00–16:00)</option>
-              <option>Soir (16:00–20:00)</option>
+              <option>Samedi matin</option>
+              <option>Samedi après-midi</option>
+              <option>Dimanche matin</option>
+              <option>Dimanche après-midi</option>
+              <option>À convenir par WhatsApp</option>
             </select>
           </div>
         </div>
         <div class="field">
           <label for="list">Votre liste de courses</label>
-          <textarea id="list" name="list" rows="5" placeholder="Ex. Lidl: lait demi-écrémé x3, bananes 1kg • Boulanger: 2 baguettes tradition • Autre: lait bébé, couches 4"></textarea>
+          <textarea id="list" name="list" rows="5" placeholder="Ex. Lidl: lait demi-écrémé x3, bananes 1kg, pain, eau, produits frais…"></textarea>
         </div>
         <div class="field">
           <label for="notes">Notes (digicode, étage, allergies…)</label>
@@ -374,12 +415,34 @@
         </div>
         <label class="disclaimer"><input type="checkbox" id="ok" required> J’accepte d’être recontacté·e par Wenze pour planifier ma livraison.</label>
         <div class="hero-cta">
-          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/32400000000?text=Bonjour%20Wenze%2C%20voici%20ma%20commande%20et%20mon%20cr%C3%A9neau%20souhait%C3%A9%20%3A">Ou via WhatsApp</a>
+          <button type="submit" class="btn btn-primary">Envoyer sur WhatsApp</button>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/32489461147?text=Bonjour%20Wenze%2C%20je%20souhaite%20faire%20une%20demande%20de%20livraison.">Ou écrire directement</a>
         </div>
         <p id="formMsg" class="mt-8" role="status" aria-live="polite"></p>
       </form>
       <p class="disclaimer mt-16">En cliquant sur “Envoyer”, vous consentez au traitement de vos données strictement pour l’organisation de la livraison. Aucune revente de données. Vous pouvez demander la suppression à tout moment.</p>
+    </div>
+  </section>
+
+
+  <!-- À propos -->
+  <section id="apropos" class="section">
+    <div class="wrap">
+      <div class="card">
+        <h2>Qui est derrière Wenze ?</h2>
+        <p>Je m’appelle Jonathan et j’ai créé Wenze après avoir constaté que beaucoup de personnes trouvaient les courses longues, fatigantes ou difficiles à organiser.</p>
+        <p>Après avoir échangé avec de nombreux clients en magasin, j’ai compris qu’un service simple, local et humain pouvait réellement faciliter leur quotidien.</p>
+        <p class="muted">C’est exactement la mission de Wenze : faire gagner du temps, simplifier les déplacements et offrir un service de proximité aux habitants de Mons et des communes voisines.</p>
+        <h3 class="mt-16">Pourquoi nous faire confiance ?</h3>
+        <ul class="clean mt-16">
+          <li><span class="check">✓</span> Contact direct avec une vraie personne</li>
+          <li><span class="check">✓</span> Prix validé avant départ</li>
+          <li><span class="check">✓</span> Ticket de caisse fourni</li>
+          <li><span class="check">✓</span> Service local sur Mons</li>
+          <li><span class="check">✓</span> Livraison planifiée le week-end</li>
+          <li><span class="check">✓</span> Acompte possible pour les commandes importantes</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -390,31 +453,54 @@
     <div class="wrap foot-grid">
       <div>
         <strong>Wenze</strong><br>
-        <span class="muted">Service de livraison de courses • Borinage & alentours</span>
+        <span class="muted">Service de courses à domicile • Mons & alentours</span>
         <div class="mt-8">
           <span class="pill">Sacs isothermes</span>
           <span class="pill">Paiement par carte</span>
-          <span class="pill">Partenariats commerces</span>
+          <span class="pill">Week-end sur rendez-vous</span>
         </div>
       </div>
       <div>
-        <div>Contact : <a href="mailto:hello@wenze.be">hello@wenze.be</a> • <a href="tel:+32400000000">+32 400 00 000</a></div>
-        <div class="mt-8">Instagram : <a href="#" aria-label="Instagram Wenze">@wenze_delivery</a></div>
+        <div>Contact : <a href="mailto:hello@wenze.be">hello@wenze.be</a> • <a href="tel:+32489461147">+32 489 46 11 47</a></div>
+        <div class="mt-8">Instagram : <a href="#" aria-label="Instagram Wenze">@wenze_be</a></div>
       </div>
     </div>
     <div class="wrap">
       <div class="sep"></div>
-      <small class="muted">© <span id="y"></span> Wenze — Tous droits réservés. <a href="#" aria-label="Mentions légales">Mentions légales</a></small>
+      <small class="muted">© <span id="y"></span> Wenze — Tous droits réservés. <a href="#mentions" onclick="toggleLegal(event)" aria-label="Mentions légales">Mentions légales</a></small>
+      <div id="mentions" class="legal-box">
+        <div class="card mt-16">
+          <h2>Mentions légales</h2>
+          <p><strong>Éditeur du site :</strong> Wenze</p>
+          <p><strong>Contact :</strong> <a href="mailto:hello@wenze.be">hello@wenze.be</a> • <a href="tel:+32489461147">+32 489 46 11 47</a></p>
+          <p><strong>Hébergement :</strong> GitHub Pages</p>
+          <p><strong>Nom de domaine :</strong> OVHcloud</p>
+          <p><strong>Données personnelles :</strong> les informations transmises via le formulaire ou WhatsApp sont utilisées uniquement pour organiser les livraisons Wenze. Elles ne sont pas revendues à des tiers et peuvent être supprimées sur demande.</p>
+          <p><strong>Responsabilité :</strong> Wenze met tout en œuvre pour fournir des informations exactes, mais ne peut garantir l’absence d’erreurs, d’indisponibilités ou de modifications du service.</p>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <a class="btn btn-primary whatsapp-float" target="_blank" rel="noopener" href="https://wa.me/32489461147?text=Bonjour%20Wenze%2C%20je%20souhaite%20faire%20une%20demande%20de%20livraison.">WhatsApp</a>
 
   <script>
     // Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Simple form handling: validate + open mailto as fallback
+    // Formulaire : validation + ouverture WhatsApp avec message pré-rempli
     const form = document.getElementById('leadForm');
     const msg = document.getElementById('formMsg');
+    const whatsappNumber = '32489461147';
+
+    function toggleLegal(event){
+      event.preventDefault();
+      const box = document.getElementById('mentions');
+      box.classList.toggle('open');
+      if(box.classList.contains('open')){
+        box.scrollIntoView({behavior:'smooth', block:'nearest'});
+      }
+    }
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -422,31 +508,34 @@
 
       const data = Object.fromEntries(new FormData(form).entries());
 
-      // Basic validation
       if(!data.name || !data.phone || !data.city || !data.slot || !document.getElementById('ok').checked){
         msg.textContent = 'Merci de compléter les champs requis.';
         msg.style.color = '#FFD166';
         return;
       }
 
-      // Build email content
-      const subject = encodeURIComponent('Nouvelle demande de livraison — Wenze');
-      const body = encodeURIComponent(
-        `Nom: ${data.name}
-Téléphone: ${data.phone}
-Ville: ${data.city}
-Créneau: ${data.slot}
-Liste: ${data.list || '-'}
-Notes: ${data.notes || '-'}`
-      );
+      const message = `Bonjour Wenze 👋
 
-      // MAILTO fallback (replace with your inbound email)
-      const mailto = `mailto:hello@wenze.be?subject=${subject}&body=${body}`;
-      window.location.href = mailto;
+Nouvelle demande de livraison
 
-      msg.textContent = 'Merci ! Votre application mail va s’ouvrir. Si rien ne se passe, envoyez-nous votre liste sur WhatsApp.';
+Nom : ${data.name}
+Téléphone : ${data.phone}
+Ville : ${data.city}
+Créneau souhaité : ${data.slot}
+
+Liste de courses :
+${data.list || '-'}
+
+Notes :
+${data.notes || '-'}
+
+Merci.`;
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener');
+
+      msg.textContent = 'WhatsApp va s’ouvrir avec votre demande pré-remplie. Il vous restera à appuyer sur Envoyer.';
       msg.style.color = '#9affdd';
-      form.reset();
     }, false);
   </script>
 </body>
